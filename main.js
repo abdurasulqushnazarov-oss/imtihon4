@@ -83,108 +83,116 @@
 
 // 6-masala
 
-let students = [];
+// let students = [];
 
 //====================================================================
 
 // 6.1-masala
 
-function createStudent(name, age, score) {
-  if (!name || name.trim() === "") {
-    return "Invalid name";
-  }
-  if (age < 5) {
-    return "Invalid age";
-  }
-  if (score < 0 || score > 100) {
-    return "Invalid score";
-  }
+// function createStudent(name, age, score) {
+//   if (!name || name.trim() === "") {
+//     return "Invalid name";
+//   }
+//   if (age < 5) {
+//     return "Invalid age";
+//   }
+//   if (score < 0 || score > 100) {
+//     return "Invalid score";
+//   }
 
-  let id;
-  if (students.length === 0) {
-    id = 1;
-  } else {
-    id = students[students.length - 1].id + 1;
-  }
+//   let id;
+//   if (students.length === 0) {
+//     id = 1;
+//   } else {
+//     id = students[students.length - 1].id + 1;
+//   }
 
-  let newStudent = { id, name, age, score };
-  students.push(newStudent);
-  return newStudent;
-}
+//   let newStudent = { id, name, age, score };
+//   students.push(newStudent);
+//   return newStudent;
+// }
+
+// console.log(createStudent("Ali", 16, 85));
 
 //====================================================================
 
 // 6.2-masala
 
-function getStudentById(id) {
-  for (let student of students) {
-    if (student.id === id) {
-      return student;
-    }
-  }
-  return null;
-}
+// function getStudentById(id) {
+//   for (let student of students) {
+//     if (student.id === id) {
+//       return student;
+//     }
+//   }
+//   return null;
+// }
+
+// console.log(getStudentById(1));
 
 //====================================================================
 
 // 6.3-masala
 
-function updateStudent(id, data) {
-  let foundStudent = null;
-  for (let student of students) {
-    if (student.id === id) {
-      foundStudent = student;
-      break;
-    }
-  }
+// function updateStudent(id, data) {
+//   let foundStudent = null;
+//   for (let student of students) {
+//     if (student.id === id) {
+//       foundStudent = student;
+//       break;
+//     }
+//   }
 
-  if (!foundStudent) {
-    return "Student not found";
-  }
+//   if (!foundStudent) {
+//     return "Student not found";
+//   }
 
-  if (data.name !== undefined) {
-    if (!data.name || data.name.trim() === "") {
-      return "Invalid name";
-    }
-    foundStudent.name = data.name;
-  }
+//   if (data.name !== undefined) {
+//     if (!data.name || data.name.trim() === "") {
+//       return "Invalid name";
+//     }
+//     foundStudent.name = data.name;
+//   }
 
-  if (data.age !== undefined) {
-    if (data.age < 5) {
-      return "Invalid age";
-    }
-    foundStudent.age = data.age;
-  }
+//   if (data.age !== undefined) {
+//     if (data.age < 5) {
+//       return "Invalid age";
+//     }
+//     foundStudent.age = data.age;
+//   }
 
-  if (data.score !== undefined) {
-    if (data.score < 0 || data.score > 100) {
-      return "Invalid score";
-    }
-    foundStudent.score = data.score;
-  }
+//   if (data.score !== undefined) {
+//     if (data.score < 0 || data.score > 100) {
+//       return "Invalid score";
+//     }
+//     foundStudent.score = data.score;
+//   }
 
-  return foundStudent;
-}
+//   return foundStudent;
+// }
+
+// console.log(updateStudent(1, { score: 95 }));
 
 //====================================================================
 
 // 6.4-masala
 
-function deleteStudent(id) {
-  let index = -1;
-  for (let i = 0; i < students.length; i++) {
-    if (students[i].id === id) {
-      index = i;
-      break;
-    }
-  }
+// function deleteStudent(id) {
+//   let index = -1;
+//   for (let i = 0; i < students.length; i++) {
+//     if (students[i].id === id) {
+//       index = i;
+//       break;
+//     }
+//   }
 
-  if (index === -1) {
-    return null;
-  }
+//   if (index === -1) {
+//     return null;
+//   }
 
-  let deleted = students.splice(index, 1);
-  return deleted[0];
-}
+//   let deleted = students.splice(index, 1);
+//   return deleted[0];
+// }
+
+// console.log(deleteStudent(1));
 
 //====================================================================
